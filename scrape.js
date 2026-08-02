@@ -9,6 +9,7 @@ const TEST_MODE = false;
 async function getUrlsFromSitemap(url) {
   const res = await fetch(url);
   const xml = await res.text();
+  console.log(`  Status ${res.status} for ${url} — response starts with: ${xml.slice(0, 150).replace(/\n/g, ' ')}`);
   const matches = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
   return matches;
 }
