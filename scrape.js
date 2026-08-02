@@ -4,9 +4,6 @@ const path = require('path');
 
 const SITEMAP_INDEX = 'https://thegorgeousclinic.co.uk/sitemap.xml';
 const BASE_URL = 'https://thegorgeousclinic.co.uk/';
-
-// Set to true for a quick homepage-only test.
-// Set to false to run the full sitemap-driven scrape.
 const TEST_MODE = true;
 
 async function getUrlsFromSitemap(url) {
@@ -20,7 +17,6 @@ async function getAllPageUrls() {
   if (TEST_MODE) {
     return [BASE_URL];
   }
-
   const topLevel = await getUrlsFromSitemap(SITEMAP_INDEX);
   let allUrls = [];
   for (const entry of topLevel) {
@@ -36,19 +32,16 @@ async function getAllPageUrls() {
 }
 
 function cleanHtml(html) {
-  let cleaned = html.replace(
-    /<script[^>]*src="[^"]*\/package\/[^"]*"[^>]*><\/script>/gi,
-    ''
-  );
+  // Walk through each <script>...</script> block ONE AT A TIME, and only
+  // remove that specific block if it's a Bubble boot/data script.
+  // Everything else (fonts, CSS, images, AOS, other scripts) is untouched.
+  const cleaned = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, (block) => {
+    const isPackageScript = /src="[^"]*\/package\/[^"]*"/i.test(block);
+    const isBubbleBootScript = /(window\.bubble_|window\.appquery|window\.Lib\b|api\/1\.1\/init\/data)/.test(block);
+    return (isPackageScript || isBubbleBootScript) ? '' : block;
+  });
 
-  cleaned = cleaned.replace(
-    /<script(?![^>]*src=)[^>]*>[\s\S]*?(?:window\.bubble_|window\.appquery|window\.Lib|api\/1\.1\/init\/data)[\s\S]*?<\/script>/gi,
-    ''
-  );
-
-  cleaned = cleaned.replace('<head>', `<head><base href="${BASE_URL}">`);
-
-  return cleaned;
+  return cleaned.replace('<head>', `<head><base href="${BASE_URL}">`);
 }
 
 async function run() {
@@ -62,7 +55,6 @@ async function run() {
   for (const url of urls) {
     count++;
     console.log(`[${count}/${urls.length}] Fetching:`, url);
-
     try {
       await page.goto(url, { waitUntil: 'load', timeout: 60000 });
       await page.waitForTimeout(5000);
