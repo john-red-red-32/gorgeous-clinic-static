@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const SITEMAP_INDEX = 'https://thegorgeousclinic.co.uk/sitemap.xml';
-const BASE_URL = 'https://thegorgeousclinic.co.uk/';
+const BASE_URL = 'https://app.thegorgeousclinic.co.uk/';
 const TEST_MODE = false;
 
 async function getUrlsFromSitemap(url) {
