@@ -4,7 +4,7 @@ const path = require('path');
 
 const SITEMAP_INDEX = 'https://thegorgeousclinic.co.uk/sitemap.xml';
 const BASE_URL = 'https://thegorgeousclinic.co.uk/';
-const TEST_MODE = true;
+const TEST_MODE = false;
 
 async function getUrlsFromSitemap(url) {
   const res = await fetch(url);
@@ -32,16 +32,17 @@ async function getAllPageUrls() {
 }
 
 function cleanHtml(html) {
-  // Walk through each <script>...</script> block ONE AT A TIME, and only
-  // remove that specific block if it's a Bubble boot/data script.
-  // Everything else (fonts, CSS, images, AOS, other scripts) is untouched.
-  const cleaned = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, (block) => {
-    const isPackageScript = /src="[^"]*\/package\/[^"]*"/i.test(block);
-    const isBubbleBootScript = /(window\.bubble_|window\.appquery|window\.Lib\b|api\/1\.1\/init\/data)/.test(block);
-    return (isPackageScript || isBubbleBootScript) ? '' : block;
-  });
+  // This output is served ONLY to bots/crawlers now — real visitors go
+  // through the Worker to the live Bubble app instead. Bots never run
+  // JavaScript, so every script is dead weight. Strip all of them.
+  let cleaned = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
 
-  return cleaned.replace('<head>', `<head><base href="${BASE_URL}">`);
+  // Fix relative paths for icons/images/CSS so they still resolve
+  // correctly even though this file is hosted on a different domain.
+  cleaned = cleaned.replace(/href="\/static\//g, `href="${BASE_URL}static/`);
+  cleaned = cleaned.replace('<head>', `<head><base href="${BASE_URL}">`);
+
+  return cleaned;
 }
 
 async function run() {
