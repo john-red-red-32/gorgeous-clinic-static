@@ -15,7 +15,8 @@ async function run() {
 
   for (const url of urls) {
     console.log('Fetching:', url);
-    await page.goto(url, { waitUntil: 'networkidle' });
+    await page.goto(url, { waitUntil: 'load', timeout: 60000 });
+    await page.waitForTimeout(5000);
 
     const html = await page.content();
 
