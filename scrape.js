@@ -5,6 +5,10 @@ const path = require('path');
 const SITEMAP_INDEX = 'https://thegorgeousclinic.co.uk/sitemap.xml';
 const BASE_URL = 'https://thegorgeousclinic.co.uk/';
 
+// Set to true for a quick homepage-only test.
+// Set to false to run the full sitemap-driven scrape.
+const TEST_MODE = true;
+
 async function getUrlsFromSitemap(url) {
   const res = await fetch(url);
   const xml = await res.text();
@@ -13,6 +17,10 @@ async function getUrlsFromSitemap(url) {
 }
 
 async function getAllPageUrls() {
+  if (TEST_MODE) {
+    return [BASE_URL];
+  }
+
   const topLevel = await getUrlsFromSitemap(SITEMAP_INDEX);
   let allUrls = [];
   for (const entry of topLevel) {
@@ -28,11 +36,6 @@ async function getAllPageUrls() {
 }
 
 function cleanHtml(html) {
-  // Remove ONLY Bubble's own app-boot/data-fetch scripts — the ones
-  // loaded from "/package/" paths, and any inline script that
-  // references Bubble's internal boot objects or the data-fetch API.
-  // Everything else (fonts, animations, video, tracking, custom
-  // decorative scripts) is left completely intact.
   let cleaned = html.replace(
     /<script[^>]*src="[^"]*\/package\/[^"]*"[^>]*><\/script>/gi,
     ''
