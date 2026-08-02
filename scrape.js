@@ -28,14 +28,21 @@ async function getAllPageUrls() {
 }
 
 function cleanHtml(html) {
-  // Remove every script tag — none of them can run correctly once this
-  // page is served from a different domain than Bubble's own.
-  let cleaned = html.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '');
+  // Remove ONLY Bubble's own app-boot/data-fetch scripts — the ones
+  // loaded from "/package/" paths, and any inline script that
+  // references Bubble's internal boot objects or the data-fetch API.
+  // Everything else (fonts, animations, video, tracking, custom
+  // decorative scripts) is left completely intact.
+  let cleaned = html.replace(
+    /<script[^>]*src="[^"]*\/package\/[^"]*"[^>]*><\/script>/gi,
+    ''
+  );
 
-  // Insert a <base> tag so every relative link/image/stylesheet path
-  // (e.g. "/package/run_css/...") resolves back to the real Bubble site
-  // instead of Cloudflare's domain. This restores fonts, CSS, and images
-  // without needing any JavaScript to run.
+  cleaned = cleaned.replace(
+    /<script(?![^>]*src=)[^>]*>[\s\S]*?(?:window\.bubble_|window\.appquery|window\.Lib|api\/1\.1\/init\/data)[\s\S]*?<\/script>/gi,
+    ''
+  );
+
   cleaned = cleaned.replace('<head>', `<head><base href="${BASE_URL}">`);
 
   return cleaned;
