@@ -7,6 +7,16 @@ const APP_URL = 'https://app.thegorgeousclinic.co.uk/';   // where Bubble's actu
 const ROOT_URL = 'https://thegorgeousclinic.co.uk/';       // the real, public, crawlable domain
 const TEST_MODE = false;
 
+// Pages that exist and are meant to be browsed without a specific data
+// entry (e.g. the full gallery/video listing) never appear in Bubble's
+// sitemap, since they're not tied to a database "Thing". Add them here
+// by hand so they still get scraped alongside everything else.
+const EXTRA_URLS = [
+  `${ROOT_URL}gallery`,
+  `${ROOT_URL}videos`,
+  `${ROOT_URL}treatments`,
+];
+
 async function getUrlsFromSitemap(url) {
   const res = await fetch(url);
   const xml = await res.text();
@@ -30,6 +40,7 @@ async function getAllPageUrls() {
       allUrls.push(entry);
     }
   }
+  allUrls = allUrls.concat(EXTRA_URLS);
   return [...new Set(allUrls)];
 }
 
@@ -38,19 +49,15 @@ function cleanHtml(html) {
   let cleaned = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
 
   // 2. Rewrite every absolute reference to the app subdomain back to the
-  //    real, public root domain — this fixes canonical tags, og:url,
-  //    twitter:*, the JSON-LD schema URL, AND any internal nav/page links
-  //    that were pointing bots toward the unrendered app subdomain.
-  //    Must run BEFORE the icon-path fix below, or it would undo it.
+  //    real, public root domain — fixes canonical tags, og:url,
+  //    twitter:*, JSON-LD schema URL, and internal nav/page links.
   cleaned = cleaned.split(APP_URL).join(ROOT_URL);
 
   // 3. Icons use a relative /static/ path that only resolves correctly
-  //    against Bubble's actual app domain — point those specifically
-  //    back at app, now that step 2 is already done.
+  //    against Bubble's actual app domain.
   cleaned = cleaned.replace(/href="\/static\//g, `href="${APP_URL}static/`);
 
-  // 4. Any remaining plain relative links (e.g. "/treatments/...") should
-  //    resolve against the crawlable root domain, not the app subdomain.
+  // 4. Remaining relative links resolve against the crawlable root domain.
   cleaned = cleaned.replace('<head>', `<head><base href="${ROOT_URL}">`);
 
   return cleaned;
@@ -68,13 +75,19 @@ async function run() {
     count++;
     console.log(`[${count}/${urls.length}] Fetching:`, url);
     try {
-      await page.goto(url, { waitUntil: 'load', timeout: 60000 });
+      // These pages are visited using their real, App-hosted equivalent
+      // so Bubble's dynamic logic actually loads them, then saved under
+      // the public root-domain path.
+      const fetchUrl = url.startsWith(ROOT_URL) ? url.replace(ROOT_URL, APP_URL) : url;
+
+      await page.goto(fetchUrl, { waitUntil: 'load', timeout: 60000 });
       await page.waitForTimeout(5000);
 
       const rawHtml = await page.content();
       const html = cleanHtml(rawHtml);
 
-      const urlPath = new URL(url).pathname;
+      const publicUrl = url.startsWith(APP_URL) ? url.replace(APP_URL, ROOT_URL) : url;
+      const urlPath = new URL(publicUrl).pathname;
       const outPath = urlPath === '/' ? 'output/index.html' : `output${urlPath}/index.html`;
 
       fs.mkdirSync(path.dirname(outPath), { recursive: true });
