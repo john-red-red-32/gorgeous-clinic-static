@@ -3,7 +3,8 @@ const fs = require('fs');
 const path = require('path');
 
 const SITEMAP_INDEX = 'https://thegorgeousclinic.co.uk/sitemap.xml';
-const BASE_URL = 'https://app.thegorgeousclinic.co.uk/';
+const APP_URL = 'https://app.thegorgeousclinic.co.uk/';   // where Bubble's actual assets live
+const ROOT_URL = 'https://thegorgeousclinic.co.uk/';       // the real, public, crawlable domain
 const TEST_MODE = false;
 
 async function getUrlsFromSitemap(url) {
@@ -16,7 +17,7 @@ async function getUrlsFromSitemap(url) {
 
 async function getAllPageUrls() {
   if (TEST_MODE) {
-    return [BASE_URL];
+    return [APP_URL];
   }
   const topLevel = await getUrlsFromSitemap(SITEMAP_INDEX);
   let allUrls = [];
@@ -33,15 +34,24 @@ async function getAllPageUrls() {
 }
 
 function cleanHtml(html) {
-  // This output is served ONLY to bots/crawlers now — real visitors go
-  // through the Worker to the live Bubble app instead. Bots never run
-  // JavaScript, so every script is dead weight. Strip all of them.
+  // 1. Bots never run JS — every script is dead weight, strip it all.
   let cleaned = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
 
-  // Fix relative paths for icons/images/CSS so they still resolve
-  // correctly even though this file is hosted on a different domain.
-  cleaned = cleaned.replace(/href="\/static\//g, `href="${BASE_URL}static/`);
-  cleaned = cleaned.replace('<head>', `<head><base href="${BASE_URL}">`);
+  // 2. Rewrite every absolute reference to the app subdomain back to the
+  //    real, public root domain — this fixes canonical tags, og:url,
+  //    twitter:*, the JSON-LD schema URL, AND any internal nav/page links
+  //    that were pointing bots toward the unrendered app subdomain.
+  //    Must run BEFORE the icon-path fix below, or it would undo it.
+  cleaned = cleaned.split(APP_URL).join(ROOT_URL);
+
+  // 3. Icons use a relative /static/ path that only resolves correctly
+  //    against Bubble's actual app domain — point those specifically
+  //    back at app, now that step 2 is already done.
+  cleaned = cleaned.replace(/href="\/static\//g, `href="${APP_URL}static/`);
+
+  // 4. Any remaining plain relative links (e.g. "/treatments/...") should
+  //    resolve against the crawlable root domain, not the app subdomain.
+  cleaned = cleaned.replace('<head>', `<head><base href="${ROOT_URL}">`);
 
   return cleaned;
 }
