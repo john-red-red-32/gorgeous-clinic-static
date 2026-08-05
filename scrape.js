@@ -5,7 +5,7 @@ const path = require('path');
 const SITEMAP_INDEX = 'https://thegorgeousclinic.co.uk/sitemap.xml';
 const APP_URL = 'https://app.thegorgeousclinic.co.uk/';   // where Bubble's actual assets live
 const ROOT_URL = 'https://thegorgeousclinic.co.uk/';       // the real, public, crawlable domain
-const TEST_MODE = false;
+const TEST_MODE = true;
 
 async function getUrlsFromSitemap(url) {
   const res = await fetch(url);
