@@ -13,6 +13,8 @@ const EXTRA_URLS = [
   `${ROOT_URL}gallery`,
   `${ROOT_URL}videos`,
   `${ROOT_URL}treatments`,
+  `${ROOT_URL}explore-academy`,
+  `${ROOT_URL}blog-posts`,
 ];
 async function getUrlsFromSitemap(url) {
   const res = await fetch(url);
