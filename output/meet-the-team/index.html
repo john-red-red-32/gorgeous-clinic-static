@@ -39,7 +39,7 @@
 
 
 
-<link type="text/css" href="/package/run_css/99f77843f16366d9fccb02b255caa4d3551dccd2586ebaa7b61ba1b4a361b582/thegorgeousclinic/live/meet-the-team/xfalse/xfalse/run.css" rel="stylesheet">
+<link type="text/css" href="/package/run_css/e320df80d0040ff71fe91e3185dd95bd0919e321237c6ac7d4b7b5b988584d80/thegorgeousclinic/live/meet-the-team/xfalse/xfalse/run.css" rel="stylesheet">
 
 
 
@@ -104,133 +104,6 @@
 </style>
 
 
-<style>
-    @keyframes gradientAnimation {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-
-    .gradient-bg {
-        background: linear-gradient(-45deg, #2c405b, #1a1a2e, #16213e, #0f3460);
-        background-size: 300% 300%;
-        animation: gradientAnimation 10s ease infinite;
-    }
-</style>
-
-
-<style>
-#login-bg9 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 110, 196, 0.6), transparent 60%),
-              radial-gradient(circle at 70% 70%, rgba(120, 115, 245, 0.6), transparent 60%),
-              radial-gradient(circle at 50% 90%, rgba(255, 203, 87, 0.5), transparent 60%),
-              radial-gradient(circle at 80% 20%, rgba(144, 238, 144, 0.4), transparent 60%),
-              linear-gradient(135deg, #ff6ec4, #7873f5, #ffcb57);
-  background-size: 200% 200%;
-  animation: animateGradient 30s ease infinite;
-}
-
-@keyframes animateGradient {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-</style>
-
-
-
-
-
-
-<style>
-#login-bg {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-
-.blob {
-  position: absolute;
-  width: 150%;
-  height: 150%;
-  border-radius: 50%;
-  filter: blur(30px);
-  opacity: 0.6;
-  animation: floaty 18s ease-in-out infinite alternate;
-}
-
-.blob1 {
-  background: linear-gradient(135deg, #5d9cec, #3874c3); /* Soft Sky → Base */
-  top: -20%;
-  left: -30%;
-}
-
-.blob2 {
-  background: linear-gradient(135deg, #a4c9f0, #2c5aa0); /* Powder Blue → Darker Core */
-  bottom: -10%;
-  right: -20%;
-  animation-delay: 4s;
-}
-
-.blob3 {
-  background: linear-gradient(135deg, #3874c3, #254b87); /* Base → Deep Indigo */
-  top: 30%;
-  left: 40%;
-  animation-delay: 8s;
-}
-
-@keyframes floaty {
-  0%   { transform: translateY(0px) scale(1) rotate(0deg); }
-  100% { transform: translateY(-30px) scale(1.1) rotate(5deg); }
-}
-</style>
-
-<style>
-.a1787489167211x9302.a1787489167211x9302::-webkit-input-placeholder {
-  color: rgba(167,160,142,1);
-}
-.a1787489167211x9302.a1787489167211x9302::-moz-placeholder {
-  color:    rgba(167,160,142,1);
-  opacity:  1;
-}
-.a1787489167211x9302.a1787489167211x9302:-ms-input-placeholder {
-  color: rgba(167,160,142,1) !important;
-}
-.a1787489167211x9302.a1787489167211x9302:-moz-placeholder {
-  color: rgba(167,160,142,1);
-  opacity:  1;
-}</style><style>
-.a1787489167334x16983.a1787489167334x16983::-webkit-input-placeholder {
-  color: rgba(160,154,140,1);
-}
-.a1787489167334x16983.a1787489167334x16983::-moz-placeholder {
-  color:    rgba(160,154,140,1);
-  opacity:  1;
-}
-.a1787489167334x16983.a1787489167334x16983:-ms-input-placeholder {
-  color: rgba(160,154,140,1) !important;
-}
-.a1787489167334x16983.a1787489167334x16983:-moz-placeholder {
-  color: rgba(160,154,140,1);
-  opacity:  1;
-}</style></head><body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0" style="height: 100%; display: flex; flex-direction: column;"><div id="login-bg">
-  <div class="blob blob1"></div>
-  <div class="blob blob2"></div>
-  <div class="blob blob3"></div>
-</div>
-
-
 
 
 <style>
@@ -244,48 +117,41 @@
 </style>
 
 
-<!-- Pure CSS full-page backdrop (fallback & grain) -->
-<style>
-  :root{
-    --bg-1:#210033;
-    --bg-2:#3a1281;
-    --bg-3:#4d23c9;
-  }
-
-  #bg-stack{
-    position:fixed; inset:0;
-    z-index:-3;                /* always behind your UI */
-    overflow:hidden;
-    pointer-events:none;
-    background:radial-gradient(circle at 30% 20%, var(--bg-3) 0%, transparent 60%),
-               radial-gradient(circle at 70% 80%, var(--bg-2) 0%, transparent 60%),
-               linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
-  }
-
-  /* optional subtle grain */
-  #bg-stack::before{
-    content:'';
-    position:absolute; inset:0;
-    background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=');
-    mix-blend-mode:overlay;
-    opacity:0.4;
-    pointer-events:none;
-  }
-
-  /* the SVG container covering full height */
-  #bg-waves{
-    position:absolute; inset:0;
-  }
-  #bg-waves svg{width:100%;height:100%;display:block;}
-</style>
-
 
 
 <!-- Google tag (gtag.js) -->
 
 
-
-
+<style>
+.a1787544383831x9302.a1787544383831x9302::-webkit-input-placeholder {
+  color: rgba(167,160,142,0);
+}
+.a1787544383831x9302.a1787544383831x9302::-moz-placeholder {
+  color:    rgba(167,160,142,0);
+  opacity:  1;
+}
+.a1787544383831x9302.a1787544383831x9302:-ms-input-placeholder {
+  color: rgba(167,160,142,0) !important;
+}
+.a1787544383831x9302.a1787544383831x9302:-moz-placeholder {
+  color: rgba(167,160,142,0);
+  opacity:  1;
+}</style><style>
+.a1787544383833x9505.a1787544383833x9505::-webkit-input-placeholder {
+  color: rgba(0,0,0,0);
+}
+.a1787544383833x9505.a1787544383833x9505::-moz-placeholder {
+  color:    rgba(0,0,0,0);
+  opacity:  1;
+}
+.a1787544383833x9505.a1787544383833x9505:-ms-input-placeholder {
+  color: rgba(0,0,0,0) !important;
+}
+.a1787544383833x9505.a1787544383833x9505:-moz-placeholder {
+  color: rgba(0,0,0,0);
+  opacity:  1;
+}</style></head>
+<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0" style="height: 100%; display: flex; flex-direction: column;">
 <img style="display: none;" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
 
 <div class="bubble-element Page baTaLaAaR main-page bubble-r-container-wrapper" style="background-color: var(--color_background_default); min-width: 350px; min-height: max(1000px, 100%); width: 100%; margin-right: auto; margin-left: auto; position: relative; z-index: 2; height: max-content; flex-shrink: 0; opacity: 1;"><div class="bubble-r-container flex column" style="justify-content: flex-start;"><div class="bubble-element Group baTaMbaM bubble-r-container flex column" style="overflow: visible; justify-content: flex-start; border-radius: 0px; opacity: 1; align-self: center; min-width: 100%; max-width: 100%; order: 5; min-height: 40px; height: max-content; flex-grow: 0; flex-shrink: 0; width: 100%; margin: 0px; z-index: 16;"><div class="bubble-element Group baTaLaAj bubble-r-container relative" style="overflow: visible; border-radius: 0px; opacity: 1; align-self: center; min-width: 100%; max-width: 100%; order: 1; min-height: 240px; height: max-content; flex-grow: 0; flex-shrink: 0; width: 100%; margin: 0px; z-index: 13; background-color: var(--color_surface_default); background-repeat: no-repeat; background-size: cover; background-image: url(&quot;https://8eb147f7d859a9618e57d27ae5aa5933.cdn.bubble.io/cdn-cgi/image/w=1536,h=,f=auto,dpr=1,fit=contain/f1765200603629x194560030177036480/jenna%20screenclip.PNG&quot;);"><div class="bubble-element HTML baTaLaAn" style="border-radius: 0px; opacity: 1; place-self: end center; min-width: 100%; max-width: 100%; min-height: 120px; width: 100%; height: max-content; margin: 0px 0px -2px; z-index: 1;"><svg width="100%" height="120px" viewBox="0 0 1200 120" preserveAspectRatio="none" style="display:block;">
@@ -419,7 +285,7 @@ University of Cambridge ICE<br></li></ul></div><div class="bubble-element Text b
     z-index: 1 !important;
 }
 </style>
-</div><div class="bubble-element Group baTaIaBw bubble-r-container flex column" style="overflow: visible; justify-content: flex-start; row-gap: 36px; border-radius: 0px; padding: 54px 20px 20px; opacity: 1; align-self: flex-start; min-width: 340px; max-width: 900px; order: 2; min-height: 600px; width: 340px; flex-grow: 1; height: max-content; margin: 0px; z-index: 2;"><div class="bubble-element Group baTaIaBx bubble-r-container flex column" style="overflow: visible; justify-content: flex-end; row-gap: 16px; border-radius: 0px; opacity: 1; align-self: center; min-width: 0px; max-width: 900px; order: 4; min-height: 650px; height: max-content; flex-grow: 0; flex-shrink: 0; width: calc(100% + 0px); margin: 0px; z-index: 2;"><h4 class="bubble-element Text baTaIaEaB bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_bTHGy_default); font-size: 34px; font-weight: 500; color: var(--color_text_default); text-align: center; line-height: 1.4; padding: 0px 0px 24px; border-radius: 0px; opacity: 1; align-self: center; min-width: 300px; order: 2; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: calc(100% + 0px); margin: 0px; z-index: 6;"><div>Get in touch</div></h4><div class="bubble-element Group baTaIaEl bubble-r-container flex row" style="overflow: visible; justify-content: center; gap: 20px; border-radius: 0px; opacity: 1; align-self: center; min-width: 40px; order: 4; min-height: 40px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 8;"><div class="bubble-element Group baTaIaCaB bubble-r-container flex column" style="overflow: visible; justify-content: flex-end; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 40px; max-width: 260px; order: 1; min-height: 40px; width: max-content; flex-grow: 0; height: max-content; margin: 0px; z-index: 7;"><div class="bubble-element Text baTaIaCaC bubble-r-vertical-center" style="background-color: rgb(234, 229, 217); white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 13px; font-weight: 600; color: var(--color_text_default); line-height: 1.4; padding: 0px 8px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 1; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px 0px -10px 24px; z-index: 6;"><div>YOUR NAME</div></div><input class="bubble-element Input baTaIaDc a1787489167211x9302" type="input" placeholder="" style="border-style: solid; border-width: 2px; border-color: rgb(104, 97, 81); border-radius: 30px; font-family: var(--font_default); font-size: 16px; font-weight: 400; color: var(--color_bTGzp_default); padding: 0px 16px; opacity: 1; transition: border-color 200ms, color 200ms; align-self: flex-start; min-width: 250px; max-width: 250px; order: 2; min-height: 48px; max-height: 48px; height: 48px; flex-grow: 1; width: 250px; margin: 0px 0px 28px; z-index: 2;"><div class="bubble-element Text baTaIaCaN bubble-r-vertical-center" style="background-color: rgb(234, 229, 217); white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 13px; font-weight: 600; color: var(--color_text_default); line-height: 1.4; padding: 0px 8px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 3; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px 0px -10px 24px; z-index: 6;"><div>YOUR EMAIL</div></div><input class="bubble-element Input baTaIaDj a1787489167211x9302" type="email" placeholder="" autocomplete="email" style="border-style: solid; border-width: 2px; border-color: rgb(104, 97, 81); border-radius: 30px; font-family: var(--font_default); font-size: 16px; font-weight: 400; color: var(--color_bTGzp_default); padding: 0px 16px; opacity: 1; transition: border-color 200ms, color 200ms; align-self: flex-start; min-width: 250px; max-width: 250px; order: 4; min-height: 48px; max-height: 48px; height: 48px; flex-grow: 1; width: 250px; margin: 0px 0px 28px; z-index: 2;"><div class="bubble-element Text baTaIaEaM bubble-r-vertical-center" style="background-color: rgb(234, 229, 217); white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 13px; font-weight: 600; color: var(--color_text_default); line-height: 1.4; padding: 0px 8px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 5; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px 0px -10px 24px; z-index: 6;"><div>YOUR MOBILE</div></div><input class="bubble-element Input baTaIaEaS a1787489167211x9302" type="input" placeholder="" style="border-style: solid; border-width: 2px; border-color: rgb(104, 97, 81); border-radius: 30px; font-family: var(--font_default); font-size: 16px; font-weight: 400; color: var(--color_bTGzp_default); padding: 0px 16px; opacity: 1; transition: border-color 200ms, color 200ms; align-self: flex-start; min-width: 250px; max-width: 250px; order: 6; min-height: 48px; max-height: 48px; height: 48px; flex-grow: 1; width: 250px; margin: 0px; z-index: 2;"></div><div class="bubble-element Group baTaIaCaJ bubble-r-container flex column" style="overflow: visible; justify-content: flex-end; border-radius: 0px; opacity: 1; align-self: flex-end; min-width: 40px; max-width: 260px; order: 2; min-height: 40px; width: max-content; flex-grow: 0; height: max-content; margin: 0px; z-index: 7;"><div class="bubble-element Text baTaIaDv bubble-r-vertical-center" id="floating-label" style="background-color: rgb(234, 229, 217); white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 13px; font-weight: 600; color: var(--color_text_default); line-height: 1.4; padding: 0px 8px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 7; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px 0px -8px 24px; z-index: 6;"><div>YOUR MESSAGE</div></div><textarea class="bubble-element MultiLineInput a1787489167334x16983" data-gramm_editor="false" maxlength="" placeholder="" rows="1" id="msg-input" style="align-self: flex-start; min-width: 250px; max-width: 250px; order: 11; min-height: 130px; flex-grow: 0; flex-shrink: 0; width: 250px; margin: 0px 0px 26px; z-index: 7; border: 2px solid rgb(104, 97, 81); background-color: rgb(234, 229, 217); overflow: hidden; overflow-wrap: break-word; border-radius: 25px; font-family: var(--font_default); font-size: 16px; font-weight: 400; color: var(--color_bTGzp_default); line-height: 1.4; padding: 12px 16px; opacity: 1; transition: border-color 200ms, color 200ms; height: 126px;"></textarea><button class="clickable-element bubble-element Button baTaIaGaL" data-outline="true" id="cta-pulse" style="box-shadow: 0px 7px 30px -10px rgba(var(--color_bTHRp_default_rgb), 0.1); background-color: rgb(104, 97, 81); font-family: var(--font_default); font-size: 16px; font-weight: 500; color: rgb(255, 255, 255); text-align: center; line-height: 1.1; border-style: solid; border-width: 2px; border-color: rgb(104, 97, 81); border-radius: 50px; padding: 0px 22px; opacity: 0.5; cursor: default; align-self: flex-start; min-width: 0px; order: 12; min-height: 48px; max-height: 48px; height: 48px; flex-grow: 1; width: calc(100% + 0px); margin: 10px 0px 0px; z-index: 6;">Fill inputs</button></div></div><div class="bubble-element Shape baTaIaGaR" style="background-color: rgb(104, 97, 81); border-radius: 0px; opacity: 1; align-self: center; min-width: 300px; max-width: 500px; order: 8; min-height: 1px; max-height: 1px; height: 1px; flex-grow: 1; width: calc(100% + 0px); margin: 36px 0px; z-index: 10;"></div><div class="bubble-element Group baTaIaFa bubble-r-container flex row" style="overflow: visible; justify-content: center; gap: 42px; border-radius: 0px; opacity: 1; align-self: center; min-width: 300px; max-width: 500px; order: 10; min-height: 180px; height: max-content; flex-grow: 0; flex-shrink: 0; width: calc(100% + 0px); margin: 0px; z-index: 9;"><div class="bubble-element Group baTaIaCaU bubble-r-container flex column" style="overflow: visible; justify-content: flex-start; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 200px; max-width: 300px; order: 1; min-height: 40px; width: 200px; flex-grow: 1; height: max-content; margin: 0px; z-index: 7;"><div class="bubble-element Text baTaIaCaV bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 14px; font-weight: 600; color: var(--color_text_default); line-height: 1.4; padding: 0px 0px 10px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 1; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div>NEED FOR SPEED?</div></div><div class="bubble-element Text baTaIaCaZ bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 14px; font-weight: 500; color: rgb(90, 89, 85); line-height: 1.4; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 2; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div>The fastest way to reach our team is always via Whatsapp.</div></div><div class="bubble-element Text baTaIaCf bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 14px; font-weight: 500; color: rgb(90, 89, 85); line-height: 1.4; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 3; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 3px 0px; z-index: 6;"><div>Message +441253 928 029</div></div><a class="bubble-element Link baTaWaAaE clickable-element bubble-r-vertical-center" target="_self" style="word-break: break-word; user-select: none; cursor: pointer; pointer-events: auto; font-family: var(--font_default); font-size: 15px; font-weight: 500; color: rgb(129, 121, 102); text-align: center; line-height: 1.2; padding: 9px 22px; border-style: solid; border-width: 2px; border-color: rgb(129, 121, 102); border-radius: 50px; opacity: 1; align-self: flex-start; min-width: 60px; order: 5; min-height: 38px; max-height: 38px; height: 38px; flex-grow: 1; width: auto; margin: 14px 0px 0px; z-index: 7;" href="https://wa.me/+441253928029"><div>Whatsapp us</div></a><div class="bubble-element Text baTaIaCa bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_bTHDn_default); font-size: 14px; font-weight: 500; color: rgb(90, 89, 85); letter-spacing: -0.5px; line-height: 1.2; padding: 4px 0px 10px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 13; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div></div></div></div><div class="bubble-element Group baTaIaCg bubble-r-container flex column" style="overflow: visible; justify-content: flex-start; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 200px; max-width: 300px; order: 2; min-height: 40px; width: 200px; flex-grow: 1; height: max-content; margin: 0px; z-index: 7;"><div class="bubble-element Text baTaIaCh bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 14px; font-weight: 600; color: var(--color_text_default); letter-spacing: -0.5px; line-height: 1.2; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 4; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px 0px 8px; z-index: 6;"><div>OTHER WAYS</div></div><div class="bubble-element Text baTaIaCl bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 14px; font-weight: 500; color: rgb(90, 89, 85); line-height: 1.2; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 5; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div>Book, reschedule, or leave a message by calling us.</div></div><a class="bubble-element Link baTaWaAaO clickable-element bubble-r-vertical-center" target="_self" style="word-break: break-word; user-select: none; cursor: pointer; pointer-events: auto; font-family: var(--font_default); font-size: 15px; font-weight: 500; color: rgb(129, 121, 102); text-align: center; line-height: 1.2; padding: 9px 22px; border-style: solid; border-width: 2px; border-color: rgb(129, 121, 102); border-radius: 50px; opacity: 1; align-self: flex-start; min-width: 60px; order: 8; min-height: 38px; max-height: 38px; height: 38px; flex-grow: 1; width: auto; margin: 14px 0px 0px; z-index: 7;" href="tel:+441253928029"><div>01253 928029</div></a><div class="bubble-element Text baTaIaCm bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_bTHDn_default); font-size: 14px; font-weight: 500; color: rgb(90, 89, 85); letter-spacing: -0.5px; line-height: 1.2; padding: 4px 0px 10px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 11; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div></div></div></div></div><div class="bubble-element Shape baTaIaHaR" style="background-color: rgb(104, 97, 81); border-radius: 0px; opacity: 1; align-self: center; min-width: 300px; max-width: 500px; order: 11; min-height: 1px; max-height: 1px; height: 1px; flex-grow: 1; width: calc(100% + 0px); margin: 36px 0px 0px; z-index: 10;"></div></div></div></div><div class="bubble-element CustomElement baTaLaAaX bubble-r-container flex column" style="background-color: rgba(70, 99, 58, 0); overflow: visible; justify-content: flex-start; border-radius: 0px; opacity: 1; align-self: center; min-width: 100%; max-width: 100%; order: 77; min-height: 600px; height: max-content; flex-grow: 0; flex-shrink: 0; width: 100%; margin: 0px; z-index: 8;"><div class="bubble-element Group baTaHfaD bubble-r-container flex column" style="overflow: visible; justify-content: flex-start; row-gap: 36px; border-radius: 0px; padding: 36px 36px 56px; opacity: 1; align-self: center; min-width: 340px; max-width: 1080px; order: 1; min-height: 400px; height: max-content; flex-grow: 0; flex-shrink: 0; width: calc(100% + 0px); margin: 0px; z-index: 2;"><div class="bubble-element Group baTaHfaW bubble-r-container flex column" style="overflow: visible; justify-content: center; row-gap: 24px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 320px; max-width: 600px; order: 3; min-height: 100px; height: max-content; flex-grow: 0; flex-shrink: 0; width: calc(100% + 0px); margin: 0px; z-index: 4;"><div class="clickable-element bubble-element Image baTaHfaX" id="lux-logo" style="border-radius: 0px; opacity: 1; cursor: pointer; align-self: flex-start; min-width: 124px; max-width: 124px; order: 1; height: max-content; flex-grow: 0; flex-shrink: 0; width: 124px; margin: 0px; z-index: 8;"><div class="aspect-ratio" style="position: relative; height: 0px; padding-top: 62.2488%;"></div><img src="https://8eb147f7d859a9618e57d27ae5aa5933.cdn.bubble.io/cdn-cgi/image/w=192,h=120,f=auto,dpr=1,fit=contain/f1764955493508x899538451859519400/black.png" alt="the gorgeous clinic logo" style="top: 0px; left: 0px; display: block; width: 100%; height: 100%; position: absolute; border-radius: 0px;"></div></div><div class="bubble-element Group baTaHfaE bubble-r-container flex row" style="overflow: visible; justify-content: flex-start; gap: 24px; border-radius: 0px; padding: 0px 12px; opacity: 1; align-self: center; min-width: 320px; max-width: 1080px; order: 4; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: calc(100% + 0px); margin: 0px; z-index: 2;"><div class="bubble-element Group baTaHhaC bubble-r-container flex column" style="overflow: visible; justify-content: flex-start; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 180px; max-width: 320px; order: 6; min-height: 40px; width: 180px; flex-grow: 1; height: max-content; margin: 0px; z-index: 7;"><div class="bubble-element Text baTaHgw bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 12px; font-weight: 700; color: var(--color_bTGzp_default); letter-spacing: 0.5px; line-height: 1.2; padding: 0px 0px 10px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 1; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div>OPENING HOURS</div></div><div class="bubble-element Text baTaHhaJ bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 12px; font-weight: 400; color: rgb(90, 89, 85); line-height: 1.6; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 2; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div>Monday 10:00 - 20:00
+</div><div class="bubble-element Group baTaIaBw bubble-r-container flex column" style="overflow: visible; justify-content: flex-start; row-gap: 36px; border-radius: 0px; padding: 54px 20px 20px; opacity: 1; align-self: flex-start; min-width: 340px; max-width: 900px; order: 2; min-height: 600px; width: 340px; flex-grow: 1; height: max-content; margin: 0px; z-index: 2;"><div class="bubble-element Group baTaIaBx bubble-r-container flex column" style="overflow: visible; justify-content: flex-end; row-gap: 16px; border-radius: 0px; opacity: 1; align-self: center; min-width: 0px; max-width: 900px; order: 4; min-height: 650px; height: max-content; flex-grow: 0; flex-shrink: 0; width: calc(100% + 0px); margin: 0px; z-index: 2;"><h4 class="bubble-element Text baTaIaEaB bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_bTHGy_default); font-size: 34px; font-weight: 500; color: var(--color_text_default); text-align: center; line-height: 1.4; padding: 0px 0px 24px; border-radius: 0px; opacity: 1; align-self: center; min-width: 300px; order: 2; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: calc(100% + 0px); margin: 0px; z-index: 6;"><div>Get in touch</div></h4><div class="bubble-element Group baTaIaEl bubble-r-container flex row" style="overflow: visible; justify-content: center; gap: 20px; border-radius: 0px; opacity: 1; align-self: center; min-width: 40px; order: 4; min-height: 40px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 8;"><div class="bubble-element Group baTaIaCaB bubble-r-container flex column" style="overflow: visible; justify-content: flex-end; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 40px; max-width: 260px; order: 1; min-height: 40px; width: max-content; flex-grow: 0; height: max-content; margin: 0px; z-index: 7;"><div class="bubble-element Text baTaIaCaC bubble-r-vertical-center" style="background-color: rgb(234, 229, 217); white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 13px; font-weight: 600; color: var(--color_text_default); line-height: 1.4; padding: 0px 8px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 1; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px 0px -10px 24px; z-index: 6;"><div>YOUR NAME</div></div><input class="bubble-element Input baTaIaDc a1787544383831x9302" type="input" placeholder="Your name" style="border-style: solid; border-width: 2px; border-color: rgb(104, 97, 81); border-radius: 30px; font-family: var(--font_default); font-size: 16px; font-weight: 400; color: var(--color_bTGzp_default); padding: 0px 16px; opacity: 1; transition: border-color 200ms, color 200ms; align-self: flex-start; min-width: 250px; max-width: 250px; order: 2; min-height: 48px; max-height: 48px; height: 48px; flex-grow: 1; width: 250px; margin: 0px 0px 28px; z-index: 2;"><div class="bubble-element Text baTaIaCaN bubble-r-vertical-center" style="background-color: rgb(234, 229, 217); white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 13px; font-weight: 600; color: var(--color_text_default); line-height: 1.4; padding: 0px 8px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 3; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px 0px -10px 24px; z-index: 6;"><div>YOUR EMAIL</div></div><input class="bubble-element Input baTaIaDj a1787544383833x9505" type="email" placeholder="Your email address" autocomplete="email" style="border-style: solid; border-width: 2px; border-color: rgb(104, 97, 81); border-radius: 30px; font-family: var(--font_default); font-size: 16px; font-weight: 400; color: var(--color_bTGzp_default); padding: 0px 16px; opacity: 1; transition: border-color 200ms, color 200ms; align-self: flex-start; min-width: 250px; max-width: 250px; order: 4; min-height: 48px; max-height: 48px; height: 48px; flex-grow: 1; width: 250px; margin: 0px 0px 28px; z-index: 2;"><div class="bubble-element Text baTaIaEaM bubble-r-vertical-center" style="background-color: rgb(234, 229, 217); white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 13px; font-weight: 600; color: var(--color_text_default); line-height: 1.4; padding: 0px 8px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 5; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px 0px -10px 24px; z-index: 6;"><div>YOUR MOBILE</div></div><input class="bubble-element Input baTaIaEaS a1787544383833x9505" type="input" placeholder="Your mobile number" style="border-style: solid; border-width: 2px; border-color: rgb(104, 97, 81); border-radius: 30px; font-family: var(--font_default); font-size: 16px; font-weight: 400; color: var(--color_bTGzp_default); padding: 0px 16px; opacity: 1; transition: border-color 200ms, color 200ms; align-self: flex-start; min-width: 250px; max-width: 250px; order: 6; min-height: 48px; max-height: 48px; height: 48px; flex-grow: 1; width: 250px; margin: 0px; z-index: 2;"></div><div class="bubble-element Group baTaIaCaJ bubble-r-container flex column" style="overflow: visible; justify-content: flex-end; border-radius: 0px; opacity: 1; align-self: flex-end; min-width: 40px; max-width: 260px; order: 2; min-height: 40px; width: max-content; flex-grow: 0; height: max-content; margin: 0px; z-index: 7;"><div class="bubble-element Text baTaIaDv bubble-r-vertical-center" id="floating-label" style="background-color: rgb(234, 229, 217); white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 13px; font-weight: 600; color: var(--color_text_default); line-height: 1.4; padding: 0px 8px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 7; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px 0px -8px 24px; z-index: 6;"><div>YOUR MESSAGE</div></div><textarea class="bubble-element MultiLineInput a1787544383833x9505" data-gramm_editor="false" maxlength="" placeholder="Type your message here" rows="1" id="msg-input" style="align-self: flex-start; min-width: 250px; max-width: 250px; order: 11; min-height: 130px; flex-grow: 0; flex-shrink: 0; width: 250px; margin: 0px 0px 26px; z-index: 7; border: 2px solid rgb(104, 97, 81); background-color: rgb(234, 229, 217); overflow: hidden; overflow-wrap: break-word; border-radius: 25px; font-family: var(--font_default); font-size: 16px; font-weight: 400; color: var(--color_bTGzp_default); line-height: 1.4; padding: 12px 16px; opacity: 1; transition: border-color 200ms, color 200ms; height: 126px;"></textarea><button class="clickable-element bubble-element Button baTaIaGaL" data-outline="true" id="cta-pulse" style="box-shadow: 0px 7px 30px -10px rgba(var(--color_bTHRp_default_rgb), 0.1); background-color: rgb(104, 97, 81); font-family: var(--font_default); font-size: 16px; font-weight: 500; color: rgb(255, 255, 255); text-align: center; line-height: 1.1; border-style: solid; border-width: 2px; border-color: rgb(104, 97, 81); border-radius: 50px; padding: 0px 22px; opacity: 0.5; cursor: default; align-self: flex-start; min-width: 0px; order: 12; min-height: 48px; max-height: 48px; height: 48px; flex-grow: 1; width: calc(100% + 0px); margin: 10px 0px 0px; z-index: 6;">Fill inputs</button></div></div><div class="bubble-element Shape baTaIaGaR" style="background-color: rgb(104, 97, 81); border-radius: 0px; opacity: 1; align-self: center; min-width: 300px; max-width: 500px; order: 8; min-height: 1px; max-height: 1px; height: 1px; flex-grow: 1; width: calc(100% + 0px); margin: 36px 0px; z-index: 10;"></div><div class="bubble-element Group baTaIaFa bubble-r-container flex row" style="overflow: visible; justify-content: center; gap: 42px; border-radius: 0px; opacity: 1; align-self: center; min-width: 300px; max-width: 500px; order: 10; min-height: 180px; height: max-content; flex-grow: 0; flex-shrink: 0; width: calc(100% + 0px); margin: 0px; z-index: 9;"><div class="bubble-element Group baTaIaCaU bubble-r-container flex column" style="overflow: visible; justify-content: flex-start; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 200px; max-width: 300px; order: 1; min-height: 40px; width: 200px; flex-grow: 1; height: max-content; margin: 0px; z-index: 7;"><div class="bubble-element Text baTaIaCaV bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 14px; font-weight: 600; color: var(--color_text_default); line-height: 1.4; padding: 0px 0px 10px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 1; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div>NEED FOR SPEED?</div></div><div class="bubble-element Text baTaIaCaZ bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 14px; font-weight: 500; color: rgb(90, 89, 85); line-height: 1.4; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 2; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div>The fastest way to reach our team is always via Whatsapp.</div></div><div class="bubble-element Text baTaIaCf bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 14px; font-weight: 500; color: rgb(90, 89, 85); line-height: 1.4; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 3; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 3px 0px; z-index: 6;"><div>Message +441253 928 029</div></div><a class="bubble-element Link baTaWaAaE clickable-element bubble-r-vertical-center" target="_self" style="word-break: break-word; user-select: none; cursor: pointer; pointer-events: auto; font-family: var(--font_default); font-size: 15px; font-weight: 500; color: rgb(129, 121, 102); text-align: center; line-height: 1.2; padding: 9px 22px; border-style: solid; border-width: 2px; border-color: rgb(129, 121, 102); border-radius: 50px; opacity: 1; align-self: flex-start; min-width: 60px; order: 5; min-height: 38px; max-height: 38px; height: 38px; flex-grow: 1; width: auto; margin: 14px 0px 0px; z-index: 7;" href="https://wa.me/+441253928029"><div>Whatsapp us</div></a><div class="bubble-element Text baTaIaCa bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_bTHDn_default); font-size: 14px; font-weight: 500; color: rgb(90, 89, 85); letter-spacing: -0.5px; line-height: 1.2; padding: 4px 0px 10px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 13; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div></div></div></div><div class="bubble-element Group baTaIaCg bubble-r-container flex column" style="overflow: visible; justify-content: flex-start; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 200px; max-width: 300px; order: 2; min-height: 40px; width: 200px; flex-grow: 1; height: max-content; margin: 0px; z-index: 7;"><div class="bubble-element Text baTaIaCh bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 14px; font-weight: 600; color: var(--color_text_default); letter-spacing: -0.5px; line-height: 1.2; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 4; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px 0px 8px; z-index: 6;"><div>OTHER WAYS</div></div><div class="bubble-element Text baTaIaCl bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 14px; font-weight: 500; color: rgb(90, 89, 85); line-height: 1.2; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 5; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div>Book, reschedule, or leave a message by calling us.</div></div><a class="bubble-element Link baTaWaAaO clickable-element bubble-r-vertical-center" target="_self" style="word-break: break-word; user-select: none; cursor: pointer; pointer-events: auto; font-family: var(--font_default); font-size: 15px; font-weight: 500; color: rgb(129, 121, 102); text-align: center; line-height: 1.2; padding: 9px 22px; border-style: solid; border-width: 2px; border-color: rgb(129, 121, 102); border-radius: 50px; opacity: 1; align-self: flex-start; min-width: 60px; order: 8; min-height: 38px; max-height: 38px; height: 38px; flex-grow: 1; width: auto; margin: 14px 0px 0px; z-index: 7;" href="tel:+441253928029"><div>01253 928029</div></a><div class="bubble-element Text baTaIaCm bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_bTHDn_default); font-size: 14px; font-weight: 500; color: rgb(90, 89, 85); letter-spacing: -0.5px; line-height: 1.2; padding: 4px 0px 10px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 11; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div></div></div></div></div><div class="bubble-element Shape baTaIaHaR" style="background-color: rgb(104, 97, 81); border-radius: 0px; opacity: 1; align-self: center; min-width: 300px; max-width: 500px; order: 11; min-height: 1px; max-height: 1px; height: 1px; flex-grow: 1; width: calc(100% + 0px); margin: 36px 0px 0px; z-index: 10;"></div></div></div></div><div class="bubble-element CustomElement baTaLaAaX bubble-r-container flex column" style="background-color: rgba(70, 99, 58, 0); overflow: visible; justify-content: flex-start; border-radius: 0px; opacity: 1; align-self: center; min-width: 100%; max-width: 100%; order: 77; min-height: 600px; height: max-content; flex-grow: 0; flex-shrink: 0; width: 100%; margin: 0px; z-index: 8;"><div class="bubble-element Group baTaHfaD bubble-r-container flex column" style="overflow: visible; justify-content: flex-start; row-gap: 36px; border-radius: 0px; padding: 36px 36px 56px; opacity: 1; align-self: center; min-width: 340px; max-width: 1080px; order: 1; min-height: 400px; height: max-content; flex-grow: 0; flex-shrink: 0; width: calc(100% + 0px); margin: 0px; z-index: 2;"><div class="bubble-element Group baTaHfaW bubble-r-container flex column" style="overflow: visible; justify-content: center; row-gap: 24px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 320px; max-width: 600px; order: 3; min-height: 100px; height: max-content; flex-grow: 0; flex-shrink: 0; width: calc(100% + 0px); margin: 0px; z-index: 4;"><div class="clickable-element bubble-element Image baTaHfaX" id="lux-logo" style="border-radius: 0px; opacity: 1; cursor: pointer; align-self: flex-start; min-width: 124px; max-width: 124px; order: 1; height: max-content; flex-grow: 0; flex-shrink: 0; width: 124px; margin: 0px; z-index: 8;"><div class="aspect-ratio" style="position: relative; height: 0px; padding-top: 62.2488%;"></div><img src="https://8eb147f7d859a9618e57d27ae5aa5933.cdn.bubble.io/cdn-cgi/image/w=192,h=120,f=auto,dpr=1,fit=contain/f1764955493508x899538451859519400/black.png" alt="the gorgeous clinic logo" style="top: 0px; left: 0px; display: block; width: 100%; height: 100%; position: absolute; border-radius: 0px;"></div></div><div class="bubble-element Group baTaHfaE bubble-r-container flex row" style="overflow: visible; justify-content: flex-start; gap: 24px; border-radius: 0px; padding: 0px 12px; opacity: 1; align-self: center; min-width: 320px; max-width: 1080px; order: 4; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: calc(100% + 0px); margin: 0px; z-index: 2;"><div class="bubble-element Group baTaHhaC bubble-r-container flex column" style="overflow: visible; justify-content: flex-start; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 180px; max-width: 320px; order: 6; min-height: 40px; width: 180px; flex-grow: 1; height: max-content; margin: 0px; z-index: 7;"><div class="bubble-element Text baTaHgw bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 12px; font-weight: 700; color: var(--color_bTGzp_default); letter-spacing: 0.5px; line-height: 1.2; padding: 0px 0px 10px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 1; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div>OPENING HOURS</div></div><div class="bubble-element Text baTaHhaJ bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 12px; font-weight: 400; color: rgb(90, 89, 85); line-height: 1.6; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 2; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div>Monday 10:00 - 20:00
 Tuesday 10:00 - 20:00<br>Wednesday 10:00 - 20:00<br>Thursday - CLOSED<br>Friday - 10:00 - 20:00<br>Saturday - 10:00 - 20:00<br>Sunday - CLOSED<br></div></div><div class="bubble-element Text baTaHhaP bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 12px; font-weight: 700; color: var(--color_bTGzp_default); letter-spacing: 0.5px; line-height: 1.2; padding: 0px 0px 10px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 3; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 26px 0px 0px; z-index: 6;"><div>BY APPOINTMENT ONLY</div></div><div class="bubble-element Text baTaHhaV bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 12px; font-weight: 400; color: rgb(90, 89, 85); line-height: 1.4; padding: 0px 0px 10px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 4; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div>Please only attend with an appointment. 
 <br>Regretfully, due to our extremely busy nature we can not accomodate walk-ins.</div></div></div><div class="bubble-element Group baTaHhb bubble-r-container flex column" style="overflow: visible; justify-content: flex-start; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 180px; max-width: 320px; order: 7; min-height: 40px; width: 180px; flex-grow: 1; height: max-content; margin: 0px; z-index: 7;"><div class="bubble-element Text baTaHhg bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 12px; font-weight: 700; color: var(--color_bTGzp_default); letter-spacing: 0.5px; line-height: 1.2; padding: 0px 0px 10px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 1; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div>FINDING US</div></div><div class="bubble-element Text baTaHhh bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 12px; font-weight: 400; color: rgb(90, 89, 85); line-height: 1.4; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 2; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div>221 Whitegate Drive
 Blackpool<br>Lancashire<br>FY3 9HW</div></div><div class="bubble-element Text baTaHhl bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 12px; font-weight: 700; color: var(--color_bTGzp_default); letter-spacing: 0.5px; line-height: 1.2; padding: 0px 0px 10px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 3; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 26px 0px 0px; z-index: 6;"><div>FREE PARKING</div></div><div class="bubble-element Text baTaHhm bubble-r-vertical-center" style="white-space: pre-wrap; overflow: visible; font-family: var(--font_default); font-size: 12px; font-weight: 400; color: rgb(90, 89, 85); line-height: 1.4; padding: 0px 0px 10px; border-radius: 0px; opacity: 1; align-self: flex-start; min-width: 0px; order: 4; min-height: 0px; height: max-content; flex-grow: 0; flex-shrink: 0; width: auto; margin: 0px; z-index: 6;"><div>Free parking is available on the driveway. 
